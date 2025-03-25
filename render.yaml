@@ -1,0 +1,10 @@
+services:
+  - type: cron
+    name: daily-recipe-bot
+    schedule: "0 13 * * *" # Runs daily at 1PM UTC
+    runtime: python
+    buildCommand: ""
+    startCommand: "python daily_recipe_bot.py"
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
